@@ -14,6 +14,6 @@ export const profile = {
 // For email, use 'mailto:your-address'. Unconfigured links are clearly disabled.
 export const contactLinks: ContactLink[] = [
   { label: 'Email Me', icon: 'mail', url: null },
-  { label: 'GitHub', icon: 'github', url: null },
+  { label: 'GitHub', icon: 'github', url: 'https://github.com/hanielcoquillajr16-spec' },
   { label: 'LinkedIn', icon: 'linkedin', url: null },
 ];

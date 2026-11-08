@@ -21,7 +21,7 @@ npm run preview
 
 ## Personalize
 
-- `src/data/profile.ts`: name, introduction, about text, education, and contact links. Replace the three `null` contact URLs with your actual `mailto:` address, GitHub profile, and LinkedIn profile. Unconfigured buttons show “Coming soon.”
+- `src/data/profile.ts`: name, introduction, about text, education, and contact links. Replace the remaining `null` contact URLs with your actual `mailto:` address and LinkedIn profile. Your GitHub profile is already configured. Unconfigured buttons show “Coming soon.”
 - `src/data/skills.ts`: skill names, local logos, and categories.
 - `src/data/projects.ts`: featured project details. Add `sourceUrl` to display its repository button. Add another object to the array to create another reusable project card.
 - `public/images/vng-preview.jpg`: a captured preview of the live project. Run `node scripts/capture-project.mjs` to refresh it (requires Chrome and network access).

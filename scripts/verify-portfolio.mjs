@@ -18,7 +18,11 @@ try {
     assert.equal((await page.locator('h1').textContent()).replace(/\s+/g, ' ').trim(), 'Haniel A. Coquilla Jr.');
     assert.equal(await page.locator('.skill-card').count(), 11, 'Reduced motion uses one accessible set of skills');
     assert.equal(await page.locator('a:has-text("View Source Code")').count(), 0);
-    assert.equal(await page.locator('.contact-button:disabled').count(), 3);
+    const contactUrls = await page.locator('#contact a.contact-button').evaluateAll(links => links.map(link => link.getAttribute('href')));
+    assert.ok(contactUrls.length > 0, 'Configured contact links are enabled');
+    for (const href of contactUrls) {
+      assert.ok(['https:', 'mailto:'].includes(new URL(href).protocol), 'Contact links use an email address or HTTPS profile');
+    }
     assert.equal(await page.locator('.project-actions a').first().getAttribute('href'), 'https://vng-lecheflan.vercel.app');
     const overflow = await page.evaluate(() => document.documentElement.scrollWidth > window.innerWidth);
     assert.equal(overflow, false, `No horizontal overflow at ${width}`);

@@ -1,12 +1,13 @@
 import type { SVGProps } from 'react';
 
-export type IconName = 'code' | 'arrow' | 'arrow-up' | 'external' | 'folder' | 'mail' | 'github' | 'linkedin' | 'graduation' | 'rocket' | 'check' | 'chevron-left' | 'chevron-right' | 'pause' | 'play' | 'menu' | 'close' | 'heart';
+export type IconName = 'code' | 'arrow' | 'arrow-up' | 'arrow-up-right' | 'external' | 'folder' | 'mail' | 'github' | 'linkedin' | 'graduation' | 'rocket' | 'check' | 'chevron-left' | 'chevron-right' | 'pause' | 'play' | 'menu' | 'close' | 'heart' | 'send' | 'user' | 'message';
 type Props = SVGProps<SVGSVGElement> & { name: IconName; size?: number };
 
 const paths: Record<IconName, React.ReactNode> = {
   code: <><path d="m8 5-7 7 7 7m8-14 7 7-7 7M14 2l-4 20" /></>,
   arrow: <path d="M4 12h16m-6-6 6 6-6 6" />,
   'arrow-up': <path d="M12 20V4m-6 6 6-6 6 6" />,
+  'arrow-up-right': <path d="M6 18 18 6M6 6h12v12" />,
   external: <><path d="M14 3h7v7m0-7L10 14" /><path d="M10 3H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-5" /></>,
   folder: <path d="M3 7V5a1 1 0 0 1 1-1h5l2 3h9a1 1 0 0 1 1 1l-2 11H3L1 8a1 1 0 0 1 1-1h18" />,
   mail: <><rect x="2" y="4" width="20" height="16" rx="3" /><path d="m3 6 9 7 9-7" /></>,
@@ -22,6 +23,9 @@ const paths: Record<IconName, React.ReactNode> = {
   menu: <path d="M4 6h16M4 12h16M4 18h16" />,
   close: <path d="m6 6 12 12M6 18 18 6" />,
   heart: <path fill="currentColor" stroke="none" d="M12 21 3.4 12.5C-3 6.2 6 0 12 6c6-6 15 .2 8.6 6.5Z" />,
+  send: <><path d="m22 2-7 20-4-9-9-4 20-7Z" /><path d="m22 2-11 11" /></>,
+  user: <><circle cx="12" cy="7" r="4" /><path d="M3 21v-2a7 7 0 0 1 7-7h4a7 7 0 0 1 7 7v2H3Z" /></>,
+  message: <><path d="M21 13a3 3 0 0 1-3 3H9l-6 5V6a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3v7Z" /><path d="M7 7h10M7 11h6" /></>,
 };
 
 export function Icon({ name, size = 20, ...props }: Props) {

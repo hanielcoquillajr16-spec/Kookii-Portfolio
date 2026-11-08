@@ -21,7 +21,7 @@ npm run preview
 
 ## Personalize
 
-- `src/data/profile.ts`: name, introduction, about text, education, and contact links. Email, GitHub, and LinkedIn are configured. Edit their URLs here to update them; use `mailto:` for email. Setting a URL to `null` displays “Coming soon.”
+- `src/data/profile.ts`: name, introduction, about text, education, and contact links. Email, GitHub, and LinkedIn are configured. Change `contactEmail` to update both the email card and form recipient. Setting a contact URL to `null` displays “Coming soon.”
 - `src/data/skills.ts`: skill names, local logos, and categories.
 - `src/data/projects.ts`: featured project details. Add `sourceUrl` to display its repository button. Add another object to the array to create another reusable project card.
 - `public/images/vng-preview.jpg`: a captured preview of the live project. Run `node scripts/capture-project.mjs` to refresh it (requires Chrome and network access).
@@ -35,7 +35,15 @@ Keyboard navigation, visible focus states, a skip link, active section navigatio
 
 Technology logos are bundled locally from [Devicon](https://github.com/devicons/devicon), with its license in `public/icons/LICENSE.txt`. Web Design uses a custom interface illustration because it is a discipline rather than a product with an official logo. Developer illustrations are original SVGs. Inter is bundled locally with its license in `public/fonts/LICENSE.txt`.
 
-The website works without a database or backend. Its technology list describes the developer's skills and the featured project's stack; it does not require every listed technology to run this portfolio.
+The website uses static hosting and does not need a database. Its technology list describes the developer's skills and the featured project's stack; it does not require every listed technology to run this portfolio.
+
+## Contact form
+
+The contact form submits directly to [FormSubmit](https://formsubmit.co/) using its AJAX endpoint. Messages go to `contactEmail` in `src/data/profile.ts`; no email password or API secret is included in the frontend.
+
+Before delivery works, open the site through `npm run dev` or your hosted URL, submit the form once, and click the activation link sent to the recipient's inbox. Check spam if needed. FormSubmit documents this one-time confirmation in its [setup instructions](https://formsubmit.co/). Inbox delivery still needs to be verified after activation.
+
+The form validates required fields and email format, prevents repeat submissions while sending, and displays confirmation, activation, timeout, and connection errors. Failed submissions preserve the entered message, with an Email Me fallback. See [FormSubmit's AJAX documentation](https://formsubmit.co/ajax-documentation) for the service contract.
 
 ## Hosting
 

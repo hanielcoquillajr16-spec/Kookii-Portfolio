@@ -10,10 +10,12 @@ export const profile = {
   education: 'STI College Las Piñas',
 };
 
-// Replace null with your actual email or profile URL when you are ready.
-// For email, use 'mailto:your-address'. Unconfigured links are clearly disabled.
+export const contactEmail = 'coquilla13nielhanjr@gmail.com';
+export const contactFormEndpoint = `https://formsubmit.co/ajax/${contactEmail}`;
+
+// Set a URL to null to disable that contact card.
 export const contactLinks: ContactLink[] = [
-  { label: 'Email Me', icon: 'mail', url: 'mailto:coquilla13nielhanjr@gmail.com' },
+  { label: 'Email Me', icon: 'mail', url: `mailto:${contactEmail}` },
   { label: 'GitHub', icon: 'github', url: 'https://github.com/hanielcoquillajr16-spec' },
   { label: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/haniel-a-coquilla-jr-b071a844a/' },
 ];

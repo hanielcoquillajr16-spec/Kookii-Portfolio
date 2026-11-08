@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import { mkdir } from 'node:fs/promises';
 import { chromium } from 'playwright-core';
 
-const base = process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:5173';
+const base = process.argv[2] || process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:5173';
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 const failures = [];
 await mkdir('test-results', { recursive: true });
@@ -18,7 +18,7 @@ try {
     assert.equal((await page.locator('h1').textContent()).replace(/\s+/g, ' ').trim(), 'Haniel A. Coquilla Jr.');
     assert.equal(await page.locator('.skill-card').count(), 11, 'Reduced motion uses one accessible set of skills');
     assert.equal(await page.locator('a:has-text("View Source Code")').count(), 0);
-    const contactUrls = await page.locator('#contact a.contact-button').evaluateAll(links => links.map(link => link.getAttribute('href')));
+    const contactUrls = await page.locator('#contact a.contact-card').evaluateAll(links => links.map(link => link.getAttribute('href')));
     assert.ok(contactUrls.length > 0, 'Configured contact links are enabled');
     for (const href of contactUrls) {
       assert.ok(['https:', 'mailto:'].includes(new URL(href).protocol), 'Contact links use an email address or HTTPS profile');
@@ -55,6 +55,7 @@ try {
     } else {
       assert.ok(await page.getByRole('button', { name: 'Next skills', exact: true }).isDisabled(), 'Controls disabled when all logos fit');
     }
+    await page.locator('#contact').screenshot({ path: `test-results/contact-${width}.png`, animations: 'disabled' });
     await page.locator('.back-to-top').click();
     await page.screenshot({ path: `test-results/portfolio-${width}.png`, fullPage: true });
     console.log(`PASS ${width}px: assets, layout, navigation, menu, links, reduced motion, carousel`);

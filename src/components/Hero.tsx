@@ -41,10 +41,10 @@ export function Hero() {
           <a href="#contact" className="button button-outline"><Icon name="mail" size={18} />Contact Me</a>
         </div>
       </div>
-      <div className="hero-art" aria-hidden="true">
-        <div className="hero-art-glow" />
-        <img className="laptop-art" src="/images/developer-laptop.svg" alt="" width="660" height="440" fetchPriority="high" />
-        <span className="floating-square square-one" /><span className="floating-square square-two" /><span className="floating-square square-three" />
+      <div className="hero-art">
+        <div className="hero-art-glow" aria-hidden="true" />
+        <img className="portrait-art" src="/images/koki.png" alt="Haniel A. Coquilla Jr. in graduation attire" width="1122" height="1402" fetchPriority="high" />
+        <span className="floating-square square-one" aria-hidden="true" /><span className="floating-square square-two" aria-hidden="true" /><span className="floating-square square-three" aria-hidden="true" />
         <div className="art-caption"><span className="status-dot" /> Ideas into interfaces <span className="caption-code">&lt;/&gt;</span></div>
       </div>
     </div>

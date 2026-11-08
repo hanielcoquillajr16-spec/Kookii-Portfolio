@@ -64,14 +64,14 @@ h2 { font-size: clamp(25px, 2.4vw, 33px); font-weight: 750; line-height: 1.25; l
 .typed-role { min-width: 235px; }
 .typing-cursor { margin-left: 5px; font-weight: 400; animation: cursor-blink 1s steps(2, jump-none) infinite; }
 .hero-description { color: #c7d6e8; max-width: 450px; font-size: 14px; line-height: 1.75; margin: 0 0 22px; }
-.hero-art { position: relative; width: calc(100% + 50px); margin-left: -25px; }
+.hero-art { position: relative; width: calc(100% + 50px); margin-left: -25px; padding-block: 24px; }
 .hero-art-glow { position: absolute; inset: 20% 5% 8%; border-radius: 50%; background: #0874bb14; filter: blur(30px); }
-.laptop-art { width: 100%; position: relative; animation: laptop-float 7s ease-in-out infinite; }
+.portrait-art { width: min(76%, 270px); height: auto; aspect-ratio: 1122 / 1402; position: relative; margin-inline: auto; border: 1px solid #27ddea99; border-radius: 28px; box-shadow: 0 0 0 6px #0bd7e408, 0 0 40px #05badd20; }
 .floating-square { width: 15px; height: 18px; position: absolute; background: linear-gradient(135deg, #09689955, #03385811); border: 1px solid #03517e25; animation: logo-float 8s ease-in-out infinite; }
 .square-one { top: 10%; left: 28%; }
 .square-two { top: 49%; right: 0; animation-delay: -3s; width: 20px; height: 24px; }
 .square-three { bottom: 15%; left: 5%; animation-delay: -5s; width: 12px; height: 14px; }
-.art-caption { position: absolute; bottom: 0; left: 30%; color: #85a8c4; display: flex; align-items: center; gap: 8px; font-size: 9px; letter-spacing: .6px; }
+.art-caption { margin-top: 16px; color: #85a8c4; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 9px; letter-spacing: .6px; }
 .status-dot { height: 5px; width: 5px; border-radius: 50%; background: #19e5ec; box-shadow: 0 0 8px #14dce9a0; display: inline-block; flex-shrink: 0; }
 .caption-code { color: #16ccdf; padding-left: 12px; font-family: monospace; font-size: 12px; }
 .about-section { padding-block: 30px; background: linear-gradient(115deg, #041320 20%, #06172850 70%, #03101c); }
@@ -146,7 +146,6 @@ h2 { font-size: clamp(25px, 2.4vw, 33px); font-weight: 750; line-height: 1.25; l
 .skip-link { position: fixed; top: -70px; left: 20px; padding: 12px 18px; z-index: 100; background: #0edce8; color: #031320; border-radius: 0 0 8px 8px; font-weight: 650; }.skip-link:focus { top: 0; }
 .reveal-ready .reveal { opacity: 0; transform: translateY(16px); transition: opacity .65s ease, transform .65s ease; }.reveal-ready .reveal.is-visible { opacity: 1; transform: translateY(0); }
 @keyframes cursor-blink { to { opacity: 0; } }
-@keyframes laptop-float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
 @keyframes logo-float { 0%,100% { transform: translateY(0) rotate(0); } 50% { transform: translateY(-3px) rotate(2deg); } }
 
 @media (min-width: 1500px) { .hero-grid { min-height: 420px; }.hero h1 { font-size: 61px; }.hero-art { width: calc(100% + 70px); } }

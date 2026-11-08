@@ -21,7 +21,7 @@ npm run preview
 
 ## Personalize
 
-- `src/data/profile.ts`: name, introduction, about text, education, and contact links. Email, GitHub, and LinkedIn are configured. Change `contactEmail` to update both the email card and form recipient. Setting a contact URL to `null` displays “Coming soon.”
+- `src/data/profile.ts`: name, introduction, about text, education, and contact links. Change `contactEmail` to update the embedded form recipient and `contactEmailLink` to update the hosted Email Me page and fallback. GitHub and LinkedIn are configured. Setting a contact URL to `null` displays “Coming soon.”
 - `src/data/skills.ts`: skill names, local logos, and categories.
 - `src/data/projects.ts`: featured project details. Add `sourceUrl` to display its repository button. Add another object to the array to create another reusable project card.
 - `public/images/vng-preview.jpg`: a captured preview of the live project. Run `node scripts/capture-project.mjs` to refresh it (requires Chrome and network access).
@@ -40,6 +40,8 @@ The website uses static hosting and does not need a database. Its technology lis
 ## Contact form
 
 The contact form submits directly to [FormSubmit](https://formsubmit.co/) using its AJAX endpoint. Messages go to `contactEmail` in `src/data/profile.ts`; no email password or API secret is included in the frontend.
+
+The Email Me card and error fallback open [your FormSubmit contact page](https://formsubmit.co/el/pokobu) in a new tab. This hosted email link is separate from the AJAX submission endpoint used by the embedded form; it should not replace `contactFormEndpoint`.
 
 Before delivery works, open the site through `npm run dev` or your hosted URL, submit the form once, and click the activation link sent to the recipient's inbox. Check spam if needed. FormSubmit documents this one-time confirmation in its [setup instructions](https://formsubmit.co/). Inbox delivery still needs to be verified after activation.
 

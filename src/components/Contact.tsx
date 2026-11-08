@@ -30,13 +30,14 @@ export function Contact() {
           <p className="contact-description">Have a project in mind, a question, or just want to connect?<br className="contact-line-break" /> Feel free to reach out. I'd love to hear from you!</p>
           <div className="contact-cards">
             {contactLinks.map(link => {
+              const isWebLink = link.url?.startsWith('https://');
               const content = <>
                 <span className={`contact-card-icon contact-icon-${link.icon}`}><Icon name={link.icon} size={37} /></span>
                 <span className="contact-card-copy"><span className="contact-card-title">{link.label}</span><span className="contact-card-description">{link.url ? descriptions[link.icon] : 'Coming soon'}</span></span>
                 <span className="contact-card-arrow"><Icon name="arrow-up-right" size={17} /></span>
               </>;
               return link.url
-                ? <a className="contact-card" key={link.icon} href={link.url} target={link.icon === 'mail' ? undefined : '_blank'} rel={link.icon === 'mail' ? undefined : 'noopener noreferrer'}>{content}</a>
+                ? <a className="contact-card" key={link.icon} href={link.url} target={isWebLink ? '_blank' : undefined} rel={isWebLink ? 'noopener noreferrer' : undefined}>{content}</a>
                 : <div className="contact-card contact-card-unavailable" key={link.icon} aria-disabled="true">{content}</div>;
             })}
           </div>

@@ -23,6 +23,9 @@ try {
 
   await page.goto(base, { waitUntil: 'networkidle' });
   await page.locator('#main-navigation a[href="#contact"]').click();
+  const emailCard = page.locator('.contact-cards').getByRole('link', { name: /Email Me/ });
+  assert.equal(await emailCard.getAttribute('href'), 'https://formsubmit.co/el/pokobu');
+  assert.equal(await emailCard.getAttribute('target'), '_blank');
   const form = page.getByRole('form', { name: 'Send a Message' });
   const name = form.getByRole('textbox', { name: /^Name/ });
   const email = form.getByRole('textbox', { name: /^Email/ });
@@ -66,7 +69,8 @@ try {
   await form.locator('.feedback-activation').waitFor();
   assert.equal(await message.inputValue(), fixture.message, 'Activation keeps the entered message');
   assert.equal(await form.locator('.feedback-success').count(), 0, 'HTTP 200 activation is not reported as success');
-  assert.equal(await form.getByRole('link', { name: 'Email Me' }).getAttribute('href'), 'mailto:coquilla13nielhanjr@gmail.com');
+  assert.equal(await form.getByRole('link', { name: 'Email Me' }).getAttribute('href'), 'https://formsubmit.co/el/pokobu');
+  assert.equal(await form.getByRole('link', { name: 'Email Me' }).getAttribute('target'), '_blank');
   console.log('PASS activation feedback and email fallback');
 
   responseMode = 'rejected';

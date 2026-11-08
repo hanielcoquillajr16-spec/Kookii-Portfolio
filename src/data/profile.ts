@@ -11,11 +11,12 @@ export const profile = {
 };
 
 export const contactEmail = 'coquilla13nielhanjr@gmail.com';
+export const contactEmailLink = 'https://formsubmit.co/el/pokobu';
 export const contactFormEndpoint = `https://formsubmit.co/ajax/${contactEmail}`;
 
 // Set a URL to null to disable that contact card.
 export const contactLinks: ContactLink[] = [
-  { label: 'Email Me', icon: 'mail', url: `mailto:${contactEmail}` },
+  { label: 'Email Me', icon: 'mail', url: contactEmailLink },
   { label: 'GitHub', icon: 'github', url: 'https://github.com/hanielcoquillajr16-spec' },
   { label: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/haniel-a-coquilla-jr-b071a844a/' },
 ];

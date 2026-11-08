@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { FormEvent } from 'react';
-import { contactEmail, contactFormEndpoint } from '../data/profile';
+import { contactEmailLink, contactFormEndpoint } from '../data/profile';
 import { Icon } from './Icon';
 
 type SubmissionStatus = 'idle' | 'sending' | 'success' | 'activation' | 'error';
@@ -105,7 +105,7 @@ export function ContactForm() {
       <button className="contact-submit" type="submit" disabled={isSending}><Icon name="send" size={23} />{isSending ? 'Sending…' : 'Send Message'}</button>
     </fieldset>
     <p className={`contact-form-feedback feedback-${status}`} role={status === 'error' || status === 'activation' ? 'alert' : 'status'} aria-live={status === 'error' || status === 'activation' ? 'assertive' : 'polite'}>
-      {feedback}{(status === 'error' || status === 'activation') && <> <a href={`mailto:${contactEmail}`}>Email Me<Icon name="arrow-up-right" size={11} /></a></>}
+      {feedback}{(status === 'error' || status === 'activation') && <> <a href={contactEmailLink} target="_blank" rel="noopener noreferrer">Email Me<Icon name="arrow-up-right" size={11} /></a></>}
     </p>
   </form>;
 }

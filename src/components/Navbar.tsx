@@ -64,7 +64,7 @@ export function Navbar() {
   return <header className="site-header">
     <div className="page-width flex items-center justify-between gap-6">
       <a className="brand" href="#home" aria-label="Haniel Coquilla, back to top" onClick={() => setOpen(false)}>
-        <Icon name="code" size={38} />
+        <img className="brand-logo" src="/favicon.svg?v=2" alt="" width="44" height="44" />
         <span>{profile.firstName} <span className="text-cyan">{profile.lastName}</span><span className="brand-dot">.</span></span>
       </a>
       <button className="menu-toggle icon-button" aria-label={open ? 'Close navigation' : 'Open navigation'} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}><Icon name={open ? 'close' : 'menu'} /></button>

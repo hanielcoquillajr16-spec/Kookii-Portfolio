@@ -43,7 +43,7 @@ export function Hero() {
       </div>
       <div className="hero-art">
         <div className="hero-art-glow" aria-hidden="true" />
-        <img className="portrait-art" src="/images/koki.png" alt="Haniel A. Coquilla Jr. in graduation attire" width="1122" height="1402" fetchPriority="high" />
+        <img className="portrait-art" src="/images/koki.jpeg" alt="Portrait of Haniel A. Coquilla Jr." width="3024" height="4032" fetchPriority="high" />
         <span className="floating-square square-one" aria-hidden="true" /><span className="floating-square square-two" aria-hidden="true" /><span className="floating-square square-three" aria-hidden="true" />
         <div className="art-caption"><span className="status-dot" /> Ideas into interfaces <span className="caption-code">&lt;/&gt;</span></div>
       </div>

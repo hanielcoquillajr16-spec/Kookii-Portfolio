@@ -66,7 +66,7 @@ h2 { font-size: clamp(25px, 2.4vw, 33px); font-weight: 750; line-height: 1.25; l
 .hero-description { color: #c7d6e8; max-width: 450px; font-size: 14px; line-height: 1.75; margin: 0 0 22px; }
 .hero-art { position: relative; width: calc(100% + 50px); margin-left: -25px; padding-block: 24px; }
 .hero-art-glow { position: absolute; inset: 20% 5% 8%; border-radius: 50%; background: #0874bb14; filter: blur(30px); }
-.portrait-art { width: min(76%, 270px); height: auto; aspect-ratio: 1122 / 1402; position: relative; margin-inline: auto; border: 1px solid #27ddea99; border-radius: 28px; box-shadow: 0 0 0 6px #0bd7e408, 0 0 40px #05badd20; }
+.portrait-art { width: min(76%, 270px); height: auto; aspect-ratio: 3 / 4; position: relative; margin-inline: auto; border: 1px solid #27ddea99; border-radius: 28px; box-shadow: 0 0 0 6px #0bd7e408, 0 0 40px #05badd20; }
 .floating-square { width: 15px; height: 18px; position: absolute; background: linear-gradient(135deg, #09689955, #03385811); border: 1px solid #03517e25; animation: logo-float 8s ease-in-out infinite; }
 .square-one { top: 10%; left: 28%; }
 .square-two { top: 49%; right: 0; animation-delay: -3s; width: 20px; height: 24px; }

@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import { chromium } from 'playwright-core';
 
 const base = process.argv[2] || process.env.PORTFOLIO_TEST_URL || 'http://127.0.0.1:5173';
+const gmailComposeUrl = 'https://mail.google.com/mail/?view=cm&fs=1&to=coquilla13nielhanjr%40gmail.com';
 const browser = await chromium.launch({ channel: 'chrome', headless: true });
 try {
   const page = await browser.newPage({ viewport: { width: 1440, height: 960 }, reducedMotion: 'reduce' });
@@ -24,7 +25,7 @@ try {
   await page.goto(base, { waitUntil: 'networkidle' });
   await page.locator('#main-navigation a[href="#contact"]').click();
   const emailCard = page.locator('.contact-cards').getByRole('link', { name: /Email Me/ });
-  assert.equal(await emailCard.getAttribute('href'), 'https://formsubmit.co/el/pokobu');
+  assert.equal(await emailCard.getAttribute('href'), gmailComposeUrl);
   assert.equal(await emailCard.getAttribute('target'), '_blank');
   const form = page.getByRole('form', { name: 'Send a Message' });
   const name = form.getByRole('textbox', { name: /^Name/ });
@@ -33,7 +34,7 @@ try {
   const submit = form.getByRole('button', { name: 'Send Message', exact: true });
   if (process.argv.includes('--unconfigured')) {
     assert.ok(await submit.isDisabled(), 'An unconfigured production form cannot pretend to send');
-    assert.equal(await form.getByRole('link', { name: 'Email Me' }).getAttribute('href'), 'https://formsubmit.co/el/pokobu');
+    assert.equal(await form.getByRole('link', { name: 'Email Me' }).getAttribute('href'), gmailComposeUrl);
     console.log('PASS unconfigured production form is disabled and provides a working fallback');
   } else {
   const fixture = { name: 'Portfolio visitor', email: 'visitor@example.com', message: 'I would like to discuss a web development project.' };
@@ -74,7 +75,7 @@ try {
   await form.getByText('Messaging is temporarily unavailable.', { exact: false }).waitFor();
   assert.equal(await message.inputValue(), fixture.message, 'Unavailable backend keeps the entered message');
   assert.equal(await form.locator('.feedback-success').count(), 0, 'Unavailable backend is not reported as success');
-  assert.equal(await form.getByRole('link', { name: 'Email Me' }).getAttribute('href'), 'https://formsubmit.co/el/pokobu');
+  assert.equal(await form.getByRole('link', { name: 'Email Me' }).getAttribute('href'), gmailComposeUrl);
   assert.equal(await form.getByRole('link', { name: 'Email Me' }).getAttribute('target'), '_blank');
   console.log('PASS missing backend configuration feedback and email fallback');
 

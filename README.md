@@ -41,7 +41,7 @@ The frontend uses static hosting and does not need a database. The Resend contac
 
 The contact form sends messages through a server endpoint and [Resend](https://resend.com/docs/send-with-nodejs). The server holds the API key, selects the fixed recipient, and uses the visitor's address only as Reply-To. The frontend never calls Resend directly.
 
-The Email Me card and fallback still open [your supplied contact page](https://formsubmit.co/el/pokobu) in a new tab. This link is separate from the embedded form's Resend backend.
+The Email Me card and fallback open Gmail's compose window in a new tab with `contactEmail` filled in as the recipient. Visitors who are signed out will need to sign in to Gmail. This link is separate from the embedded form's Resend backend.
 
 ### Set up Resend
 

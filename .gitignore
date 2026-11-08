@@ -3,7 +3,5 @@ dist/
 .env
 .env.*
 !.env.example
-.sites-local/
-.openai/*.tar.gz
 test-results/
 *.tsbuildinfo

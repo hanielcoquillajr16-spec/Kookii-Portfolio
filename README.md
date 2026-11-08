@@ -39,4 +39,6 @@ The website works without a database or backend. Its technology list describes t
 
 ## Hosting
 
-`npm run build` outputs a static site to `dist/`, suitable for static hosting. `.openai/hosting.json` retains the registered private Sites identity and static output directory. Keep that identity for future updates.
+Source code is maintained in [Kookii-Portfolio on GitHub](https://github.com/hanielcoquillajr16-spec/Kookii-Portfolio).
+
+`npm run build` outputs a static site to `dist/`, suitable for static hosting.

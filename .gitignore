@@ -4,4 +4,6 @@ dist/
 .env.*
 !.env.example
 test-results/
+.vercel/
+.netlify/
 *.tsbuildinfo

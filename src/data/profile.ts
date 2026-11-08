@@ -12,7 +12,7 @@ export const profile = {
 
 export const contactEmail = 'coquilla13nielhanjr@gmail.com';
 export const contactEmailLink = 'https://formsubmit.co/el/pokobu';
-export const contactFormEndpoint = `https://formsubmit.co/ajax/${contactEmail}`;
+export const contactFormEndpoint = import.meta.env.VITE_CONTACT_ENDPOINT?.trim() || (import.meta.env.DEV ? '/api/contact' : '');
 
 // Set a URL to null to disable that contact card.
 export const contactLinks: ContactLink[] = [

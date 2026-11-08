@@ -1,1 +1,27 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="16" fill="#04111f"/><path d="m22 20-13 12 13 12m20-24 13 12-13 12m-6-31-8 38" fill="none" stroke="#11dfec" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="170 155 910 910" role="img" aria-labelledby="logo-title">
+  <title id="logo-title">Haniel Coquilla HC logo</title>
+  <defs>
+    <linearGradient id="cyan" x1="320" y1="830" x2="930" y2="330" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00d9ee" />
+      <stop offset="1" stop-color="#02edf1" />
+    </linearGradient>
+    <linearGradient id="letter-c" x1="625" y1="680" x2="840" y2="840" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#f3f5f7" />
+      <stop offset=".35" stop-color="#e1f1f3" />
+      <stop offset="1" stop-color="#00deed" />
+    </linearGradient>
+  </defs>
+  <rect x="170" y="155" width="910" height="910" rx="100" fill="#020a13" />
+  <g fill="url(#cyan)">
+    <path d="M273 641C246 536 283 414 378 329 499 220 668 202 817 296L802 306C665 219 501 243 387 344 295 425 260 547 273 641Z" />
+    <path d="m989 577 15-11c6 60-6 122-31 178h-19c27-55 39-110 35-167Z" />
+    <path d="m323 830 17-4c123 168 364 186 521 44h9C724 1026 477 1013 323 830Z" />
+    <path d="m204 814 152-90v57L204 814Z" />
+    <path d="m466 679 292-190h281l-88 64H761L466 728v-49Z" />
+    <path d="m865 323-77 59 68 57 6-23-42-34 45-35v-24Z" />
+    <path d="m943 294 12 10-65 149h-16l69-159Z" />
+    <path d="m975 323-6 24 40 35-42 34 4 23 71-58-67-58Z" />
+  </g>
+  <path d="m360 474 90-72v202l135-79v-51l91-72v116L450 664v76l-90 58V474Z" fill="#f2f3f5" />
+  <path d="m585 694 95-59v102l30 29h253l-74 74H671l-86-80v-66Z" fill="url(#letter-c)" />
+</svg>

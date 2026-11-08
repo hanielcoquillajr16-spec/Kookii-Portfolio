@@ -13,7 +13,7 @@ export const profile = {
 // Replace null with your actual email or profile URL when you are ready.
 // For email, use 'mailto:your-address'. Unconfigured links are clearly disabled.
 export const contactLinks: ContactLink[] = [
-  { label: 'Email Me', icon: 'mail', url: null },
+  { label: 'Email Me', icon: 'mail', url: 'mailto:coquilla13nielhanjr@gmail.com' },
   { label: 'GitHub', icon: 'github', url: 'https://github.com/hanielcoquillajr16-spec' },
-  { label: 'LinkedIn', icon: 'linkedin', url: null },
+  { label: 'LinkedIn', icon: 'linkedin', url: 'https://www.linkedin.com/in/haniel-a-coquilla-jr-b071a844a/' },
 ];

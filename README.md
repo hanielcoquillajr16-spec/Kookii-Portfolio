@@ -1,4 +1,6 @@
-# Haniel Coquilla — Developer Portfolio
+# Kookii-Portfolio
+
+Haniel Coquilla — Developer Portfolio.
 
 A responsive React + TypeScript portfolio inspired by the supplied navy-and-cyan reference. Built with Vite, Tailwind CSS, and lightweight CSS animations.
 
